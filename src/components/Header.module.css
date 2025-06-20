@@ -1,0 +1,125 @@
+/* src/components/Header.module.css */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95); /* Blanco semi-transparente para un efecto flotante */
+  backdrop-filter: blur(8px); /* Efecto de desenfoque para modernidad */
+  padding: 15px 0; /* Un poco menos de padding vertical */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08); /* Sombra más suave y extendida */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px; /* Padding horizontal para el contenido del nav */
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Un poco más de espacio */
+}
+
+.logoImage {
+  height: 48px; /* Un poco más grande para darle presencia */
+  width: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #080808; /* Un borde sutil de color primario */
+  box-shadow: 0 0 10px rgba(108, 92, 231, 0.2); /* Sombra para el logo */
+}
+
+.logoText {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8em; /* Tamaño del texto del nombre */
+  font-weight: 600; /* Un poco más de peso */
+  color: #2c3e50; /* Un color oscuro profundo */
+  text-decoration: none;
+  letter-spacing: -0.5px; /* Un espaciado de letras sutil */
+}
+
+.navList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 40px; /* Más espacio entre los ítems del menú */
+}
+
+.navItem a {
+  color: #555; /* Un gris neutro */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05em;
+  position: relative; /* Para el efecto de subrayado al pasar el ratón */
+  transition: color 0.3s ease;
+}
+
+/* Efecto de subrayado elegante al pasar el ratón */
+.navItem a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #6c5ce7; /* Color primario de tu elección */
+  transition: width 0.3s ease;
+}
+
+.navItem a:hover::after {
+  width: 100%;
+}
+
+.navItem a:hover {
+  color: #6c5ce7; /* Color primario al pasar el ratón */
+}
+
+
+/* --- Media Queries para Responsividad del Header --- */
+@media (max-width: 900px) {
+  .nav {
+    padding: 0 20px; /* Ajusta el padding para pantallas medianas */
+  }
+  .navList {
+    gap: 25px; /* Menos espacio en el menú */
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column; /* Apila el logo y el menú en pantallas pequeñas */
+    gap: 15px;
+    align-items: flex-start; /* Alinea los elementos a la izquierda */
+  }
+
+  .navList {
+    flex-direction: column; /* Apila los ítems del menú */
+    gap: 10px;
+    width: 100%; /* Asegura que la lista ocupe todo el ancho */
+    text-align: left; /* Alinea el texto a la izquierda */
+  }
+
+  .navItem {
+    width: 100%; /* Para que los ítems del menú ocupen todo el ancho */
+  }
+
+  .navItem a {
+    padding: 8px 0; /* Más padding para facilitar el clic */
+    display: block; /* Para que el enlace ocupe todo el espacio del li */
+    font-size: 1em;
+  }
+
+  .logoImage {
+    height: 40px;
+    width: 40px;
+  }
+}

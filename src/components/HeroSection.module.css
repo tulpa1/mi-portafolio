@@ -1,0 +1,108 @@
+/* src/components/HeroSection.module.css */
+
+.heroSection {
+  min-height: 100vh;
+  width: 100%; /* No 100vw, ya que 100% es el ancho del padre y es más controlable */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(108, 92, 231, 0.7) 100%); /* Gradiente blanco a morado suave */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 40px; /* Más padding horizontal */
+  position: relative; /* Para posicionar elementos relativos a la sección si es necesario */
+  overflow: hidden; /* Oculta cualquier cosa que se desborde */
+}
+
+.heroTitle {
+  font-family: 'Poppins', sans-serif;
+  color: #2c3e50; /* Color oscuro para el título */
+  font-size: 3.8em; /* Tamaño grande y audaz */
+  margin-bottom: 25px;
+  max-width: 900px; /* Límite para que el texto no se extienda demasiado */
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra más prominente */
+  line-height: 1.2;
+  font-weight: 700; /* Negrita para el título principal */
+}
+
+/* Estilo para el texto en negrita dentro del título si lo usas (ej. **Jefferson Miranda**) */
+.heroTitle strong {
+  color: #6c5ce7; /* Resalta tu nombre con el color primario */
+}
+
+
+.heroSubtitle {
+  font-family: 'Poppins', sans-serif;
+  color: #555; /* Gris más suave para el subtítulo */
+  font-size: 1.4em; /* Tamaño legible */
+  margin-bottom: 40px;
+  max-width: 700px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+  font-weight: 400; /* Regular weight */
+}
+
+.heroButton {
+  padding: 14px 32px; /* Más padding para un botón más grande */
+  background-color: #6c5ce7; /* Color primario para el botón */
+  color: #fff; /* Texto blanco */
+  text-decoration: none;
+  border-radius: 8px; /* Bordes ligeramente más redondeados */
+  font-size: 1.1em;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(108, 92, 231, 0.3); /* Sombra más pronunciada para el botón */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  border: none; /* Asegura que no tenga bordes predeterminados */
+  cursor: pointer; /* Indica que es clickeable */
+}
+
+.heroButton:hover {
+  background-color: #5d4ad6; /* Un tono más oscuro al pasar el ratón */
+  transform: translateY(-3px); /* Pequeño efecto de "levantar" */
+  box-shadow: 0 10px 25px rgba(108, 92, 231, 0.4); /* Sombra más fuerte al pasar el ratón */
+}
+
+/* --- Media Queries para Responsividad de HeroSection --- */
+@media (max-width: 1200px) {
+  .heroTitle {
+    font-size: 3.2em; /* Ajusta el tamaño del título */
+  }
+  .heroSubtitle {
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 900px) {
+  .heroTitle {
+    font-size: 2.8em;
+  }
+  .heroSubtitle {
+    font-size: 1.15em;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.2em; /* Más pequeño para móviles */
+    margin-bottom: 15px;
+  }
+  .heroSubtitle {
+    font-size: 1em;
+    margin-bottom: 25px;
+  }
+  .heroButton {
+    padding: 10px 24px;
+    font-size: 0.95em;
+  }
+  .heroSection {
+    padding: 0 20px; /* Menos padding en móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 1.8em;
+  }
+  .heroSubtitle {
+    font-size: 0.9em;
+  }
+}
