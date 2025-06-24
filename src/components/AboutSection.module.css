@@ -1,0 +1,145 @@
+/* src/components/AboutSection.module.css */
+
+.aboutSection {
+  padding: 80px 40px; /* Padding similar a ProjectsSection */
+  background-color: #ffffff; /* Fondo blanco o muy claro */
+  text-align: center; /* Centra el título y CTA */
+}
+
+.contentWrapper {
+  max-width: 900px; /* Un ancho máximo para que el texto no sea demasiado largo en pantallas grandes */
+  margin: 0 auto; /* Centra el contenedor */
+}
+
+.sectionTitle {
+  font-size: 2.8em;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 60px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Underline para el título de la sección (igual que ProjectsSection) */
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 4px;
+  background-color: #6c5ce7; /* Tu color primario */
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.aboutContent {
+  display: flex; /* Para la imagen al lado del texto (si la usas) */
+  flex-direction: row; /* Texto e imagen uno al lado del otro */
+  align-items: flex-start; /* Alinea el contenido al inicio verticalmente */
+  gap: 40px; /* Espacio entre la imagen y el texto */
+  margin-bottom: 40px;
+  text-align: left; /* Alinea el texto a la izquierda dentro del contenedor */
+}
+
+.profileImage {
+  width: 250px; /* Tamaño de la imagen */
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px; /* Bordes ligeramente redondeados */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  flex-shrink: 0; /* Evita que la imagen se encoja */
+}
+
+.textContainer {
+  font-size: 1.1em; /* Tamaño de fuente para el texto principal */
+  color: #444; /* Un gris un poco más oscuro que el fondo */
+  line-height: 1.8; /* Espaciado entre líneas para mejor lectura */
+}
+
+.textContainer p {
+  margin-bottom: 1em; /* Espacio entre párrafos */
+}
+
+.textContainer p:last-child {
+  margin-bottom: 0; /* Quita el margen del último párrafo */
+}
+
+.textContainer strong {
+  color: #6c5ce7; /* Resalta palabras clave como tu nombre o tecnologías */
+  font-weight: 600; /* Un poco más de peso para resaltar */
+}
+
+.callToAction {
+  font-size: 1.2em;
+  color: #555;
+  margin-top: 40px; /* Espacio superior */
+}
+
+.contactLink {
+  color: #6c5ce7; /* Color primario para el enlace */
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid #6c5ce7; /* Subrayado que combine con el color */
+  padding-bottom: 2px;
+  transition: all 0.3s ease;
+}
+
+.contactLink:hover {
+  color: #5d4ad6; /* Tono más oscuro al pasar el ratón */
+  border-color: #5d4ad6;
+  transform: translateY(-2px); /* Pequeño efecto de levantamiento */
+}
+
+/* --- Media Queries para Responsividad de AboutSection --- */
+@media (max-width: 900px) {
+  .aboutSection {
+    padding: 60px 25px;
+  }
+  .sectionTitle {
+    font-size: 2.4em;
+    margin-bottom: 40px;
+  }
+  .profileImage {
+    width: 200px;
+    height: 200px;
+  }
+  .textContainer {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutContent {
+    flex-direction: column; /* Apila la imagen y el texto en pantallas pequeñas */
+    align-items: center; /* Centra la imagen y el texto apilados */
+    gap: 30px;
+    text-align: center; /* Centra el texto en móviles */
+  }
+  .profileImage {
+    margin-bottom: 20px; /* Espacio debajo de la imagen apilada */
+  }
+  .sectionTitle {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+  .callToAction {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutSection {
+    padding: 40px 20px;
+  }
+  .profileImage {
+    width: 180px;
+    height: 180px;
+  }
+  .textContainer {
+    font-size: 0.95em;
+  }
+  .callToAction {
+    font-size: 1em;
+  }
+}
