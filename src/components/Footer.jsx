@@ -10,7 +10,7 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
         <p className={styles.copyright}>
-          &copy; {currentYear} Jefferson Miranda. Todos los derechos reservados.
+          &copy; {currentYear} Jefferson Miranda. All rights reserved.
         </p>
         <div className={styles.socialLinks}>
           {/* Enlace a GitHub */}
