@@ -3,7 +3,7 @@ const projects = [
   {
     id: 1,
     title: 'Cooperativa Caceenp - NOVA',
-    description: 'Migración del Core financiero CNCOOP a NOVA, es un ERP desarrollado originalmente en Oracle forms, por lo cual se migro a la nueva tecnología Oracle Apex, con el fin de modernizar la plataforma y mejorar la experiencia del usuario y optimizar los procesos transaccionales.',
+    description: 'Migration of the CNCOOP Financial Core to NOVA, an ERP originally developed in Oracle Forms, was therefore migrated to the new Oracle Apex technology, in order to modernize the platform and improve the user experience and optimize transactional processes.',
     technologies: ['Oracle PLSQL', 'APEX', 'Oracle Forms', 'JavaScript', 'HTML', 'CSS', 'jasperReports'],
     githubLink: 'https://github.com/tulpa1/Caceenp_Nova_prj.git',
     liveDemoLink: 'https://www.caceenp.coop/',
@@ -12,7 +12,7 @@ const projects = [
   {
     id: 2,
     title: 'Household Solutions HS - Servi Center Oster',
-    description: 'El sistema CRM Oster es una plataforma de gestión de refacciones, se desarrollo un nuevo modulo para los pagos a los centros de servicio(CDS), el cual permite a los usuarios gestionar las liquidaciones de manera eficiente, asegurando un control preciso y una experiencia de usuario fluida.',
+    description: 'The Oster CRM system is a spare parts management platform. A new module for service center payments (CDS) has been developed, allowing users to manage settlements efficiently, ensuring precise control and a seamless user experience.',
     technologies: ['ScriptCase', 'PHP', 'JavaSscript', 'HTML', 'CSS', 'MySQL'],
     githubLink: 'https://github.com/tulpa1/crm_oster_liquidaciones.git',
     liveDemoLink: 'https://servicenterplus.com/app_Login/',

@@ -12,13 +12,13 @@ function HeroSection() {
       {/* Tu contenido principal del Hero Section */}
       <div className={styles.heroContent}>
         <h1 className={styles.heroTitle}>
-          Hola, soy Jefferson
+          Hi! I'm Jefferson Miranda
         </h1>
         <p className={styles.heroSubtitle}>
-          Desarrollador Full-Stack | Apasionado por la tecnología y el diseño
+          Devoloper Full-Stack | Passionate about technology and design
         </p>
         <a href="#projects" className={styles.heroButton}>
-          Ver Proyectos
+          View My Projects
         </a>
       </div>
     </section>

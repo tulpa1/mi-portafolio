@@ -2,45 +2,51 @@
 import React from 'react';
 import styles from './AboutSection.module.css'; // Para tus estilos
 
+// --- Importar íconos de React Icons ---
+// Asegúrate de que react-icons esté instalado: npm install react-icons
+import { FaCode, FaServer, FaDatabase, FaTools, FaLightbulb } from 'react-icons/fa';
+// FaCode: para habilidades generales de código/frontend
+// FaServer: para backend
+// FaDatabase: para bases de datos
+// FaTools: para herramientas
+// FaLightbulb: para conceptos/metodologías (ideas, innovación)
+// Puedes explorar más en https://react-icons.github.io/react-icons/
+// y cambiar 'fa' por 'di' (DevIcons) o 'si' (Simple Icons) si prefieres otros.
+
 function AboutSection() {
   return (
     <section id="about" className={styles.aboutSection}>
       <div className={styles.contentWrapper}>
-        <h2 className={styles.sectionTitle}>Sobre Mí</h2>
+        <h2 className={styles.sectionTitle}>About</h2>
         <div className={styles.aboutContent}>
-          {/* Puedes añadir una imagen tuya aquí si quieres, colócala en public/images/ */}
-          {/* <img
-            src="/images/tu-foto-perfil-larga.jpg" // Cambia esto por tu imagen
+          <img
+            src="/images/about.jpeg" // Cambia esto por tu imagen
             alt="Jefferson Miranda"
             className={styles.profileImage}
-          /> */}
+          />
           <div className={styles.textContainer}>
             <p>
-              Soy un desarrollador Full-Stack apasionado por crear soluciones web innovadoras y eficientes. Con una sólida base en **React.js, Node.js y bases de datos (SQL y NoSQL)**, me especializo en construir aplicaciones robustas, escalables y con interfaces de usuario intuitivas.
+              I'm a full-stack developer passionate about creating innovative and efficient web solutions. With a solid foundation in React.js, Node.js, and databases (SQL and NoSQL), I specialize in building robust, scalable applications with intuitive user interfaces.
             </p>
             <p>
-              Mi viaje en el desarrollo comenzó con la curiosidad de entender cómo funcionan las cosas detrás de una pantalla, y rápidamente se convirtió en una pasión por transformar ideas complejas en experiencias digitales fluidas. Me entusiasma aprender nuevas tecnologías y enfrentar desafíos que me permitan crecer tanto profesional como personalmente.
+              My journey in development began with a curiosity to understand how things work behind a screen, and quickly evolved into a passion for transforming complex ideas into seamless digital experiences. I'm excited to learn new technologies and take on challenges that allow me to grow both professionally and personally.
             </p>
-            <p>
-              Más allá del código, disfruto de [menciona un hobby o interés, ej. "resolver rompecabezas lógicos", "leer sobre IA", "el diseño gráfico básico"]. Siempre estoy buscando proyectos que me permitan combinar mi creatividad con mis habilidades técnicas para entregar valor real.
-            </p>
-            {/* Puedes añadir una lista de habilidades aquí si lo prefieres en formato de píldoras */}
-            {/*
+
             <div className={styles.skillsList}>
-              <h3>Mis Habilidades Clave:</h3>
+              <h3>Skills</h3>
               <ul>
-                <li>**Frontend:** React, JavaScript (ES6+), HTML5, CSS3, Redux</li>
-                <li>**Backend:** Node.js, Express.js, REST APIs</li>
-                <li>**Bases de Datos:** MongoDB, PostgreSQL, MySQL</li>
-                <li>**Herramientas:** Git, GitHub, VS Code, npm/Yarn</li>
-                <li>**Conceptos:** Responsive Design, CI/CD, Metodologías Ágiles</li>
+                <li><FaCode className={styles.skillIcon} /> Frontend: React, JavaScript (ES6+), HTML5, CSS3, Redux</li>
+                <li><FaServer className={styles.skillIcon} /> Backend: Node.js, Express.js, REST APIs</li>
+                <li><FaDatabase className={styles.skillIcon} /> Bases de Datos: MongoDB, PostgreSQL, MySQL</li>
+                <li><FaTools className={styles.skillIcon} /> Herramientas: Git, GitHub, VS Code, npm/Yarn</li>
+                <li><FaLightbulb className={styles.skillIcon} /> Conceptos: Responsive Design, CI/CD, Metodologías Ágiles</li>
               </ul>
             </div>
-            */}
+
           </div>
         </div>
         <p className={styles.callToAction}>
-          ¿Tienes un proyecto en mente o quieres conectar? ¡No dudes en <a href="#contact" className={styles.contactLink}>contactarme</a>!
+          Do you have a project in mind or want to connect? No, guys! <a href="#contact" className={styles.contactLink}>contact me</a>!
         </p>
       </div>
     </section>

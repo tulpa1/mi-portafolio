@@ -1,145 +1,201 @@
 /* src/components/AboutSection.module.css */
 
 .aboutSection {
-  padding: 80px 40px; /* Padding similar a ProjectsSection */
-  background-color: #ffffff; /* Fondo blanco o muy claro */
-  text-align: center; /* Centra el título y CTA */
+    padding: 100px 20px; /* Más padding arriba y abajo para dejar espacio al header/footer fijos */
+    background-color: #f8f8f8; /* Un fondo claro para esta sección */
+    color: #333;
+    text-align: center;
+    min-height: calc(100vh - 160px); /* Ajuste mínimo para que no sea muy pequeña si hay poco contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contentWrapper {
-  max-width: 900px; /* Un ancho máximo para que el texto no sea demasiado largo en pantallas grandes */
-  margin: 0 auto; /* Centra el contenedor */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco para el contenido principal */
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); /* Sombra suave para un efecto elevado */
+    text-align: left; /* Alinea el texto a la izquierda dentro del wrapper */
 }
 
 .sectionTitle {
-  font-size: 2.8em;
-  font-weight: 700;
-  color: #2c3e50;
-  margin-bottom: 60px;
-  position: relative;
-  display: inline-block;
-}
-
-/* Underline para el título de la sección (igual que ProjectsSection) */
-.sectionTitle::after {
-  content: '';
-  position: absolute;
-  width: 60px;
-  height: 4px;
-  background-color: #6c5ce7; /* Tu color primario */
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 2px;
+    font-size: 3em;
+    color: #2c3e50; /* Color oscuro para el título principal */
+    margin-bottom: 40px;
+    font-weight: 700;
+    text-align: center; /* Centra el título de la sección */
 }
 
 .aboutContent {
-  display: flex; /* Para la imagen al lado del texto (si la usas) */
-  flex-direction: row; /* Texto e imagen uno al lado del otro */
-  align-items: flex-start; /* Alinea el contenido al inicio verticalmente */
-  gap: 40px; /* Espacio entre la imagen y el texto */
-  margin-bottom: 40px;
-  text-align: left; /* Alinea el texto a la izquierda dentro del contenedor */
+    display: flex; /* Usa flexbox para alinear la imagen y el texto */
+    flex-direction: column; /* Por defecto, la imagen y texto en columna para móviles */
+    align-items: center; /* Centra los ítems en el eje cruzado */
+    gap: 40px; /* Espacio entre la imagen y el texto */
+    margin-bottom: 40px;
 }
 
 .profileImage {
-  width: 250px; /* Tamaño de la imagen */
-  height: 250px;
-  object-fit: cover;
-  border-radius: 12px; /* Bordes ligeramente redondeados */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  flex-shrink: 0; /* Evita que la imagen se encoja */
+    width: 250px; /* Tamaño fijo para tu imagen de perfil */
+    height: 250px;
+    border-radius: 50%; /* Para hacerla circular */
+    object-fit: cover; /* Asegura que la imagen no se distorsione */
+    border: 5px solid #6c5ce7; /* Borde con tu color primario */
+    box-shadow: 0 8px 25px rgba(108, 92, 231, 0.2); /* Sombra para que la imagen resalte */
+    transition: transform 0.3s ease-in-out; /* Transición para efecto hover */
+}
+
+.profileImage:hover {
+    transform: scale(1.05); /* Ligeramente más grande al pasar el ratón */
 }
 
 .textContainer {
-  font-size: 1.1em; /* Tamaño de fuente para el texto principal */
-  color: #444; /* Un gris un poco más oscuro que el fondo */
-  line-height: 1.8; /* Espaciado entre líneas para mejor lectura */
+    flex: 1; /* Permite que el contenedor de texto ocupe el espacio disponible */
+    line-height: 1.8;
+    font-size: 1.1em;
+    color: #555;
 }
 
 .textContainer p {
-  margin-bottom: 1em; /* Espacio entre párrafos */
+    margin-bottom: 1em; /* Espacio entre párrafos */
 }
 
-.textContainer p:last-child {
-  margin-bottom: 0; /* Quita el margen del último párrafo */
+.skillsList {
+    margin-top: 30px;
+    background-color: #f0f4f7; /* Un fondo ligeramente diferente para la lista de habilidades */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.textContainer strong {
-  color: #6c5ce7; /* Resalta palabras clave como tu nombre o tecnologías */
-  font-weight: 600; /* Un poco más de peso para resaltar */
+.skillsList h3 {
+    font-size: 1.5em;
+    color: #4a69bd; /* Un color ligeramente diferente para el título de habilidades */
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.skillsList ul {
+    list-style: none; /* Quita los puntos de la lista */
+    padding: 0;
+    display: grid; /* Usa grid para organizar las habilidades en columnas */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas responsivas */
+    gap: 15px; /* Espacio entre elementos de la lista */
+}
+
+.skillsList li {
+    background-color: #e0e9f0;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 0.95em;
+    color: #333;
+    font-weight: 500;
+    text-align: left; /* Alinea el texto a la izquierda para que el ícono esté al inicio */
+    border: 1px solid #cce0ee;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+
+    display: flex; /* Permite alinear el ícono y el texto en la misma línea */
+    align-items: center; /* Centra verticalmente el ícono con el texto */
+}
+
+.skillsList li:hover {
+    background-color: #d1e0ed;
+    transform: translateY(-3px);
+}
+
+.skillIcon {
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+    font-size: 3.2em; /* Tamaño del ícono */
+    color: #6c5ce7; /* Color del ícono (tu color primario) */
 }
 
 .callToAction {
-  font-size: 1.2em;
-  color: #555;
-  margin-top: 40px; /* Espacio superior */
+    font-size: 1.2em;
+    margin-top: 30px;
+    color: #444;
+    text-align: center;
+    font-weight: 500;
 }
 
 .contactLink {
-  color: #6c5ce7; /* Color primario para el enlace */
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 2px solid #6c5ce7; /* Subrayado que combine con el color */
-  padding-bottom: 2px;
-  transition: all 0.3s ease;
+    color: #6c5ce7; /* Tu color primario para el enlace de contacto */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
 }
 
 .contactLink:hover {
-  color: #5d4ad6; /* Tono más oscuro al pasar el ratón */
-  border-color: #5d4ad6;
-  transform: translateY(-2px); /* Pequeño efecto de levantamiento */
+    color: #5d4ad6; /* Color ligeramente más oscuro al pasar el ratón */
+    text-decoration: underline;
 }
 
-/* --- Media Queries para Responsividad de AboutSection --- */
-@media (max-width: 900px) {
-  .aboutSection {
-    padding: 60px 25px;
-  }
-  .sectionTitle {
-    font-size: 2.4em;
-    margin-bottom: 40px;
-  }
-  .profileImage {
-    width: 200px;
-    height: 200px;
-  }
-  .textContainer {
-    font-size: 1em;
-  }
+/* --- Media Queries para Responsividad --- */
+
+@media (min-width: 768px) {
+    .aboutContent {
+        flex-direction: row; /* En pantallas más grandes, la imagen y el texto en fila */
+        text-align: left; /* Alinea el texto a la izquierda en desktop */
+    }
+
+    .profileImage {
+        margin-right: 40px; /* Espacio a la derecha de la imagen cuando está en fila */
+        margin-bottom: 0; /* Reinicia el margen inferior */
+    }
+
+    .textContainer {
+        text-align: left;
+    }
+
+    .skillsList ul {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablets */
+    }
 }
 
-@media (max-width: 768px) {
-  .aboutContent {
-    flex-direction: column; /* Apila la imagen y el texto en pantallas pequeñas */
-    align-items: center; /* Centra la imagen y el texto apilados */
-    gap: 30px;
-    text-align: center; /* Centra el texto en móviles */
-  }
-  .profileImage {
-    margin-bottom: 20px; /* Espacio debajo de la imagen apilada */
-  }
-  .sectionTitle {
-    font-size: 2em;
-    margin-bottom: 30px;
-  }
-  .callToAction {
-    font-size: 1.1em;
-  }
+@media (min-width: 1024px) {
+    .skillsList ul {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas más grandes */
+    }
+}
+
+@media (max-width: 767px) {
+    .sectionTitle {
+        font-size: 2.5em;
+        margin-bottom: 30px;
+    }
+    .profileImage {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 30px; /* Margen inferior para separar de los textos en móviles */
+    }
+    .textContainer {
+        font-size: 1em;
+    }
+    .skillsList h3 {
+        font-size: 1.3em;
+    }
+    .skillsList ul {
+        grid-template-columns: 1fr; /* Una sola columna en móviles */
+    }
+    .callToAction {
+        font-size: 1.1em;
+    }
+    .contentWrapper {
+        padding: 15px;
+    }
 }
 
 @media (max-width: 480px) {
-  .aboutSection {
-    padding: 40px 20px;
-  }
-  .profileImage {
-    width: 180px;
-    height: 180px;
-  }
-  .textContainer {
-    font-size: 0.95em;
-  }
-  .callToAction {
-    font-size: 1em;
-  }
+    .sectionTitle {
+        font-size: 2em;
+    }
+    .profileImage {
+        width: 180px;
+        height: 180px;
+    }
+    .aboutSection {
+        padding: 80px 15px;
+    }
 }

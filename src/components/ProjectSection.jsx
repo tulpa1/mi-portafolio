@@ -7,7 +7,7 @@ import styles from './ProjectsSection.module.css'; // Para tus estilos de la sec
 function ProjectsSection() {
   return (
     <section id="projects" className={styles.projectsSection}>
-      <h2 className={styles.sectionTitle}>Mis Proyectos</h2>
+      <h2 className={styles.sectionTitle}>My Projets</h2>
       <div className={styles.projectsGrid}>
         {/* Mapea sobre los datos de tus proyectos y renderiza una ProjectCard para cada uno */}
         {projectsData.map(project => (

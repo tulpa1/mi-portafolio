@@ -41,14 +41,14 @@ function ContactForm() {
   return (
     <section id="contact" className={styles.contactSection}>
       <div className={styles.contentWrapper}>
-        <h2 className={styles.sectionTitle}>Contáctame</h2>
+        <h2 className={styles.sectionTitle}>Contact</h2>
         <p className={styles.description}>
-          ¿Tienes un proyecto en mente, una pregunta o simplemente quieres saludar?
-          ¡No dudes en rellenar el formulario!
+          Do you have a project in mind, a question, or just want to say hello?
+          Don't hesitate to fill out the form!
         </p>
         <form className={styles.contactForm} onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
-            <label htmlFor="name" className={styles.label}>Nombre:</label>
+            <label htmlFor="name" className={styles.label}>Name:</label>
             <input
               type="text"
               id="name"
@@ -70,7 +70,7 @@ function ContactForm() {
           </div>
 
           <div className={styles.formGroup}>
-            <label htmlFor="message" className={styles.label}>Mensaje:</label>
+            <label htmlFor="message" className={styles.label}>Message:</label>
             <textarea
               id="message"
               name="message"
@@ -85,17 +85,17 @@ function ContactForm() {
             className={styles.submitButton}
             disabled={status === 'sending'} // Deshabilita el botón mientras se envía
           >
-            {status === 'sending' ? 'Enviando...' : 'Enviar Mensaje'}
+            {status === 'sending' ? 'Sending...' : 'Send Message'}
           </button>
 
           {status === 'success' && (
             <p className={styles.statusMessage + ' ' + styles.success}>
-              ¡Gracias por tu mensaje! Me pondré en contacto contigo pronto.
+              Thanks for your message! I'll get back to you soon.
             </p>
           )}
           {status === 'error' && (
             <p className={styles.statusMessage + ' ' + styles.error}>
-              Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde o contáctame directamente por email.
+              There was an error sending your message. Please try again later or contact me directly by email.
             </p>
           )}
         </form>

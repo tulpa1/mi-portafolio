@@ -38,7 +38,7 @@ function ProjectCard({ project }) { // Recibe un objeto 'project' como prop
               rel="noopener noreferrer"
               className={styles.demoButton}
             >
-              Demo en Vivo
+              Live Demo
             </a>
           )}
         </div>
