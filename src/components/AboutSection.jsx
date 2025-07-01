@@ -16,7 +16,7 @@ function AboutSection() {
           /> */}
           <div className={styles.textContainer}>
             <p>
-              ¡Hola! Soy **Jefferson Miranda**, un desarrollador Full-Stack apasionado por crear soluciones web innovadoras y eficientes. Con una sólida base en **React.js, Node.js y bases de datos (SQL y NoSQL)**, me especializo en construir aplicaciones robustas, escalables y con interfaces de usuario intuitivas.
+              Soy un desarrollador Full-Stack apasionado por crear soluciones web innovadoras y eficientes. Con una sólida base en **React.js, Node.js y bases de datos (SQL y NoSQL)**, me especializo en construir aplicaciones robustas, escalables y con interfaces de usuario intuitivas.
             </p>
             <p>
               Mi viaje en el desarrollo comenzó con la curiosidad de entender cómo funcionan las cosas detrás de una pantalla, y rápidamente se convirtió en una pasión por transformar ideas complejas en experiencias digitales fluidas. Me entusiasma aprender nuevas tecnologías y enfrentar desafíos que me permitan crecer tanto profesional como personalmente.

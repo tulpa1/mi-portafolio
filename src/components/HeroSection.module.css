@@ -1,70 +1,127 @@
 /* src/components/HeroSection.module.css */
 
 .heroSection {
-  min-height: 100vh;
-  width: 100%; /* No 100vw, ya que 100% es el ancho del padre y es más controlable */
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(108, 92, 231, 0.7) 100%); /* Gradiente blanco a morado suave */
+  min-height: 100vh; /* Ocupa al menos la altura completa de la ventana */
+  width: 100%;
+  /* IMPORTANTE: El fondo de gradiente de la HeroSection ahora se muestra a través */
+  /* del fondo transparente del CodeBackground. Puedes ajustar este gradiente */
+  /* para que funcione bien con el color de los caracteres del fondo de código. */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(108, 92, 231, 0.7) 100%);
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 40px; /* Más padding horizontal */
-  position: relative; /* Para posicionar elementos relativos a la sección si es necesario */
-  overflow: hidden; /* Oculta cualquier cosa que se desborde */
+  padding: 0 40px;
+  position: relative; /* Es crucial para que el CodeBackground se posicione correctamente dentro */
+  overflow: hidden; /* Oculta cualquier parte del fondo de código que se salga de los límites */
+}
+
+/* Contenedor para el contenido principal del Hero (título, subtítulo, botón) */
+.heroContent {
+  position: relative; /* Permite que este div y su contenido estén sobre el CodeBackground */
+  z-index: 1; /* Asegura que el contenido (texto, botón) esté SIEMPRE por encima del fondo de código */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 900px; /* Limita el ancho del contenido para mejor lectura */
+  padding: 20px; /* Padding interno para el contenido */
+  /* Puedes añadir un fondo muy sutil o un blur aquí si quieres que el texto destaque aún más */
+  /* Por ejemplo, un ligero fondo semitransparente para el texto */
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  /* backdrop-filter: blur(5px); */
+  /* border-radius: 15px; */
 }
 
 .heroTitle {
   font-family: 'Poppins', sans-serif;
-  color: #2c3e50; /* Color oscuro para el título */
-  font-size: 3.8em; /* Tamaño grande y audaz */
+  color: #2c3e50; /* Color oscuro profundo para contraste */
+  font-size: 3.8em;
   margin-bottom: 25px;
-  max-width: 900px; /* Límite para que el texto no se extienda demasiado */
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra más prominente */
+  max-width: 900px;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra para que destaque sobre el fondo */
   line-height: 1.2;
-  font-weight: 700; /* Negrita para el título principal */
+  font-weight: 700;
+  cursor: default; /* Indica que no es un enlace clickeable */
+
+  /* Animación de entrada al cargar la página */
+  animation: fadeInDown 1s ease-out forwards;
+  opacity: 0; /* Inicia invisible */
+  transform: translateY(-20px); /* Inicia un poco más arriba */
+
+  /* Quitamos el efecto hover de levitación aquí */
+  transition: none; /* No queremos transición en el hover de este elemento si no hay efecto */
 }
 
-/* Estilo para el texto en negrita dentro del título si lo usas (ej. **Jefferson Miranda**) */
 .heroTitle strong {
-  color: #6c5ce7; /* Resalta tu nombre con el color primario */
+  color: #6c5ce7; /* Mantiene el color primario para tu nombre */
 }
-
 
 .heroSubtitle {
   font-family: 'Poppins', sans-serif;
-  color: #555; /* Gris más suave para el subtítulo */
-  font-size: 1.4em; /* Tamaño legible */
+  color: #555; /* Gris más suave para contraste */
+  font-size: 1.4em;
   margin-bottom: 40px;
   max-width: 700px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra sutil */
-  font-weight: 400; /* Regular weight */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra para que destaque */
+  font-weight: 400;
+  cursor: default; /* Indica que no es un enlace clickeable */
+
+  /* Animación de entrada con un retraso */
+  animation: fadeInDown 1s ease-out 0.3s forwards;
+  opacity: 0;
+  transform: translateY(-20px);
+
+  /* Quitamos el efecto hover de levitación aquí */
+  transition: none; /* No queremos transición en el hover de este elemento si no hay efecto */
 }
 
 .heroButton {
-  padding: 14px 32px; /* Más padding para un botón más grande */
-  background-color: #6c5ce7; /* Color primario para el botón */
-  color: #fff; /* Texto blanco */
+  padding: 14px 32px;
+  background-color: #6c5ce7;
+  color: #fff;
   text-decoration: none;
-  border-radius: 8px; /* Bordes ligeramente más redondeados */
+  border-radius: 8px;
   font-size: 1.1em;
   font-weight: 600;
-  box-shadow: 0 6px 20px rgba(108, 92, 231, 0.3); /* Sombra más pronunciada para el botón */
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  border: none; /* Asegura que no tenga bordes predeterminados */
-  cursor: pointer; /* Indica que es clickeable */
+  box-shadow: 0 6px 20px rgba(108, 92, 231, 0.3);
+  border: none;
+  cursor: pointer;
+
+  /* Animación de entrada con más retraso */
+  animation: fadeInDown 1s ease-out 0.6s forwards;
+  opacity: 0;
+  transform: translateY(-20px);
+
+  /* Transición para todos los efectos hover del botón (sí queremos que este se mueva) */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, letter-spacing 0.3s ease;
 }
 
 .heroButton:hover {
-  background-color: #5d4ad6; /* Un tono más oscuro al pasar el ratón */
-  transform: translateY(-3px); /* Pequeño efecto de "levantar" */
-  box-shadow: 0 10px 25px rgba(108, 92, 231, 0.4); /* Sombra más fuerte al pasar el ratón */
+  background-color: #5d4ad6; /* Tono más oscuro al pasar el ratón */
+  transform: translateY(-3px) scale(1.02); /* Se eleva y se agranda ligeramente */
+  box-shadow: 0 10px 25px rgba(108, 92, 231, 0.4); /* Sombra más fuerte */
+  letter-spacing: 1px; /* Espaciado de letras para un efecto "push" */
+}
+
+/* Keyframes para la animación de entrada de todos los elementos del Hero */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px); /* Inicia más arriba */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Termina en su posición original */
+  }
 }
 
 /* --- Media Queries para Responsividad de HeroSection --- */
 @media (max-width: 1200px) {
   .heroTitle {
-    font-size: 3.2em; /* Ajusta el tamaño del título */
+    font-size: 3.2em;
   }
   .heroSubtitle {
     font-size: 1.3em;
@@ -82,7 +139,7 @@
 
 @media (max-width: 768px) {
   .heroTitle {
-    font-size: 2.2em; /* Más pequeño para móviles */
+    font-size: 2.2em;
     margin-bottom: 15px;
   }
   .heroSubtitle {
@@ -94,7 +151,7 @@
     font-size: 0.95em;
   }
   .heroSection {
-    padding: 0 20px; /* Menos padding en móviles */
+    padding: 0 20px;
   }
 }
 

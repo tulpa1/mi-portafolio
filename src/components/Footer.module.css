@@ -1,11 +1,19 @@
 /* src/components/Footer.module.css */
 
 .footer {
-  background-color: #2c3e50; /* Un gris oscuro profundo, combinando con tus títulos */
-  color: #ecf0f1; /* Un gris muy claro para el texto */
-  padding: 40px 20px; /* Padding superior/inferior y lateral */
+   background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 20px 20px; /* Ajuste el padding para un footer fijo, puede que necesites menos */
   text-align: center;
-  font-size: 0.9em; /* Fuente un poco más pequeña */
+  font-size: 0.9em;
+
+  /* --- Propiedades para que sea fijo --- */
+  position: fixed; /* Mantiene el footer en un lugar fijo en la ventana */
+  bottom: 0;       /* Lo pega al borde inferior de la ventana */
+  left: 0;         /* Lo pega al borde izquierdo de la ventana */
+  width: 100%;     /* Lo extiende a todo el ancho de la ventana */
+  z-index: 999;    /* Un z-index alto para que esté por encima de otros contenidos (pero debajo del Header, que es 1000) */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Sombra superior sutil */
 }
 
 .footerContent {
