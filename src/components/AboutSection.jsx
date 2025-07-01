@@ -20,7 +20,7 @@ function AboutSection() {
         <h2 className={styles.sectionTitle}>About</h2>
         <div className={styles.aboutContent}>
           <img
-            src="/images/about.jpeg" // Cambia esto por tu imagen
+            src="/mi-portafolio/images/about.jpeg" // Cambia esto por tu imagen
             alt="Jefferson Miranda"
             className={styles.profileImage}
           />

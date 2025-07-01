@@ -7,7 +7,7 @@ function Header() {
     <header className={styles.header}>
       <nav className={styles.nav}>
         <div className={styles.logoContainer}>
-            <img src="/images/mi-logo.jpg" alt="Logo" className={styles.logoImage} />
+            <img src="/mi-portafolio/images/milogo.jpg" alt="Logo" className={styles.logoImage} />
             <a href="#hero" className={styles.logo}>Jefferson Noe Miranda Pineda</a>
         </div>
         <ul className={styles.navList}>

@@ -7,7 +7,7 @@ const projects = [
     technologies: ['Oracle PLSQL', 'APEX', 'Oracle Forms', 'JavaScript', 'HTML', 'CSS', 'jasperReports'],
     githubLink: 'https://github.com/tulpa1/Caceenp_Nova_prj.git',
     liveDemoLink: 'https://www.caceenp.coop/',
-    image: '/images/ca.jpg' // Guarda tus imágenes en la carpeta public/images
+    image: '/mi-portafolio/images/ca.jpg' // Guarda tus imágenes en la carpeta public/images
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const projects = [
     technologies: ['ScriptCase', 'PHP', 'JavaSscript', 'HTML', 'CSS', 'MySQL'],
     githubLink: 'https://github.com/tulpa1/crm_oster_liquidaciones.git',
     liveDemoLink: 'https://servicenterplus.com/app_Login/',
-    image: '/images/sevicenterplus.png'
+    image: '/mi-portafolio/images/sevicenterplus.png'
   },
   // ¡Añade aquí todos tus proyectos! Recuerda incluir enlaces a GitHub y demos en vivo.
 ];
