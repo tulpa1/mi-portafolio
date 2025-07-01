@@ -14,8 +14,8 @@ const projects = [
     title: 'Household Solutions HS - Servi Center Oster',
     description: 'El sistema CRM Oster es una plataforma de gestión de refacciones, se desarrollo un nuevo modulo para los pagos a los centros de servicio(CDS), el cual permite a los usuarios gestionar las liquidaciones de manera eficiente, asegurando un control preciso y una experiencia de usuario fluida.',
     technologies: ['ScriptCase', 'PHP', 'JavaSscript', 'HTML', 'CSS', 'MySQL'],
-    githubLink: 'https://github.com/tu-usuario/expense-tracker',
-    liveDemoLink: 'https://tu-usuario.netlify.app/expense-tracker-app/',
+    githubLink: 'https://github.com/tulpa1/crm_oster_liquidaciones.git',
+    liveDemoLink: 'https://servicenterplus.com/app_Login/',
     image: '/images/sevicenterplus.png'
   },
   // ¡Añade aquí todos tus proyectos! Recuerda incluir enlaces a GitHub y demos en vivo.
