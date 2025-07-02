@@ -17,7 +17,7 @@ function AboutSection() {
   return (
     <section id="about" className={styles.aboutSection}>
       <div className={styles.contentWrapper}>
-        <h2 className={styles.sectionTitle}>About</h2>
+        <h2 className={styles.sectionTitle}>About Me</h2>
         <div className={styles.aboutContent}>
           <img
             src="/mi-portafolio/images/about.jpeg" // Cambia esto por tu imagen
@@ -46,7 +46,7 @@ function AboutSection() {
           </div>
         </div>
         <p className={styles.callToAction}>
-          Do you have a project in mind or want to connect? No, guys! <a href="#contact" className={styles.contactLink}>contact me</a>!
+          Do you have a project in mind or want to connect? <a href="#contact" className={styles.contactLink}>contact me</a>!
         </p>
       </div>
     </section>

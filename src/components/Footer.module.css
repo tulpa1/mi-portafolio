@@ -8,7 +8,6 @@
   font-size: 0.9em;
 
   /* --- Propiedades para que sea fijo --- */
-  position: fixed; /* Mantiene el footer en un lugar fijo en la ventana */
   bottom: 0;       /* Lo pega al borde inferior de la ventana */
   left: 0;         /* Lo pega al borde izquierdo de la ventana */
   width: 100%;     /* Lo extiende a todo el ancho de la ventana */
