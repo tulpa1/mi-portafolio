@@ -1,0 +1,181 @@
+/* src/components/ProjectForm.module.css */
+
+.formContainer {
+  background-color: var(--color-background-light); /* Fondo del contenedor del formulario */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  max-width: 700px; /* Ancho máximo para que no sea demasiado grande */
+  margin: 40px auto; /* Centrar el formulario horizontalmente y añadir margen vertical */
+  border: 1px solid var(--color-border); /* Borde sutil */
+}
+
+.formTitle {
+  font-size: 2.2em;
+  color: var(--color-heading); /* Color del título */
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  letter-spacing: -0.02em; /* Ligero ajuste de espaciado */
+}
+
+.projectForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacio entre los grupos de formulario */
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  font-size: 1em;
+  color: var(--color-text-dark); /* Color de las etiquetas */
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="url"],
+.formGroup input[type="number"],
+.formGroup input[type="file"], /* Estilo para el input de tipo file */
+.formGroup textarea {
+  padding: 12px 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 1em;
+  color: var(--color-text);
+  background-color: var(--color-input-background);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave al enfocar */
+  width: 100%; /* Ocupar todo el ancho disponible */
+  box-sizing: border-box; /* Incluir padding y borde en el ancho */
+}
+
+/* Estilo específico para input de tipo file para una apariencia más uniforme */
+.formGroup input[type="file"] {
+  padding: 10px 12px; /* Ligeramente menos padding para files */
+}
+
+.formGroup input[type="text"]:focus,
+.formGroup input[type="url"]:focus,
+.formGroup input[type="number"]:focus,
+.formGroup input[type="file"]:focus,
+.formGroup textarea:focus {
+  border-color: var(--color-primary); /* Color de acento al enfocar */
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.2); /* Sombra de enfoque */
+  outline: none; /* Eliminar el contorno por defecto del navegador */
+}
+
+.formGroup textarea {
+  min-height: 100px; /* Altura mínima para el área de texto */
+  resize: vertical; /* Permite al usuario redimensionar verticalmente */
+}
+
+.selectedFileName {
+  font-size: 0.9em;
+  color: var(--color-text-dark);
+  margin-top: 5px;
+  opacity: 0.8;
+}
+
+.submitButton {
+  background-color: var(--color-accent); /* Color principal o de acento para el botón */
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px;
+  width: 100%; /* Botón ocupa todo el ancho */
+}
+
+.submitButton:hover:not(:disabled) { /* Efecto al pasar el ratón si no está deshabilitado */
+  background-color: var(--color-accent-dark); /* Un tono más oscuro */
+  transform: translateY(-2px); /* Ligero levantamiento */
+}
+
+.submitButton:disabled { /* Estilo cuando el botón está deshabilitado (ej. subiendo) */
+  background-color: var(--color-gray);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.formMessage {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* Estilos específicos para mensajes de éxito */
+.formMessage[style*="color:"] { /* Detecta si hay un estilo de color inline (ej. de JS) */
+  color: var(--color-success);
+  background-color: rgba(var(--color-success-rgb), 0.1);
+}
+
+/* Estilos específicos para mensajes de error */
+.formMessage[style*="Error"] { /* Detecta la palabra "Error" en el mensaje */
+  color: var(--color-error);
+  background-color: rgba(var(--color-error-rgb), 0.1);
+}
+
+
+/* --- Variables de Color (puedes colocarlas en tu archivo CSS principal si ya tienes uno) --- */
+:root {
+  --color-background-light: #f8f9fa; /* Gris claro */
+  --color-heading: #2c3e50; /* Azul oscuro */
+  --color-text: #34495e; /* Gris azulado */
+  --color-text-dark: #2c3e50; /* Mismo que heading */
+  --color-border: #e0e0e0; /* Gris muy claro para bordes */
+  --color-input-background: #ffffff; /* Blanco para campos de entrada */
+  
+  --color-primary: #007bff; /* Azul vibrante (ej. para focus) */
+  --color-primary-rgb: 0, 123, 255; /* Versión RGB de --color-primary */
+
+  --color-accent: #28a745; /* Verde para acciones principales */
+  --color-accent-dark: #218838; /* Verde más oscuro para hover */
+
+  --color-success: #28a745; /* Verde para mensajes de éxito */
+  --color-success-rgb: 40, 167, 69;
+
+  --color-error: #dc3545; /* Rojo para mensajes de error */
+  --color-error-rgb: 220, 53, 69;
+
+  --color-gray: #6c757d; /* Gris para botones deshabilitados */
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+  .formContainer {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .formTitle {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+
+  .submitButton {
+    padding: 12px 20px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .formContainer {
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .formTitle {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+}
