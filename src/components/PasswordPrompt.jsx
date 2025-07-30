@@ -20,7 +20,8 @@ function PasswordPrompt({ setAccessGranted }) {
       // Si el correo es correcto, otorgar acceso
       setAccessGranted(true);
       // Redirigir al formulario de nuevo proyecto
-      navigate('/add-project'); 
+      //navigate('/add-project');
+      navigate('/grid-projects'); 
     } else {
       setError('Correo electrónico incorrecto. Acceso denegado.');
     }

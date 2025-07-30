@@ -8,6 +8,7 @@ import AboutSection from './components/AboutSection';
 import ProjectSection from './components/ProjectSection';
 import ContactForm from './components/ContactFom'; // Asegúrate que sea ContactForm o ContactFom
 import Footer from './components/Footer';
+import GridProject from './components/ProjectGrid';
 
 // Nuevos componentes para la administración
 import AddProject from './components/AddProject'; // Esta será la página que contiene tu ProjectForm
@@ -18,12 +19,12 @@ function App() {
   const [accessGranted, setAccessGranted] = useState(false);
 
   return (
-    <Router basename="/mi-portafolio"> {/* Asegúrate de que basename coincida con tu repo */}
+    <Router basename="/mi-portafolio"> 
       <div className="portfolio-app">
         {/* El Header (Navbar) estará siempre visible */}
         <Header /> 
 
-        <main style={{ paddingTop: '80px' }}> {/* Ajusta este valor a la altura de tu Header */}
+        <main className='main-content' > 
           <Routes>
             {/* Ruta para la página principal del portafolio */}
             <Route 
@@ -39,6 +40,11 @@ function App() {
             />
 
             {/* Ruta protegida para el formulario de añadir proyecto */}
+            <Route
+              path="/grid-projects" 
+              element={accessGranted ? <GridProject /> : <Navigate to="/admin-login" replace />}
+            />
+
             <Route 
               path="/add-project" 
               element={accessGranted ? <AddProject /> : <Navigate to="/admin-login" replace />} 

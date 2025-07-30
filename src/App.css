@@ -1,8 +1,37 @@
-#root {
+/*html, body, #root {
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}*/
+
+html, body, #root{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.portfolio-app{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: aquamarine;
+}
+
+.main-content {
+  flex: 1;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: aqua;
 }
 
 .logo {
@@ -17,6 +46,7 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+
 
 @keyframes logo-spin {
   from {

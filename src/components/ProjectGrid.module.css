@@ -1,0 +1,19 @@
+
+.imgproject {
+  max-width: 50%;
+  height: auto;
+}
+
+.loading, .error, .noProjects {
+  text-align: center;
+  font-size: 1.2em;
+  color: var(--color-text-dark); /* Asume que var(--color-text-dark) está definido globalmente */
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.error {
+  color: var(--color-error); /* Asume que var(--color-error) está definido globalmente */
+  background-color: rgba(220, 53, 69, 0.1); /* Usar un color rgba basado en tu var(--color-error-rgb) */
+  border-radius: 8px;
+}
