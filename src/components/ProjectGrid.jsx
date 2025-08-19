@@ -55,7 +55,7 @@ function ProjectGrid(){
     }
 
     return(
-        <Container maxWidth="lg" sx={{ mt: 5, mb:5, pt: '80px'}}>
+        <Container maxWidth="lg" sx={{ mt: 5, mb:5, pt: '80px'}} className="container_projects">
             <Typography variant="h4" component="h2" align="center" gutterBottom sx={{mb: 4, color: 'primary.dark'}}>
                 Administrar Proyectos
             </Typography>
@@ -102,7 +102,7 @@ function ProjectGrid(){
                                         <img src={project.image} alt={project.name} className={styles.imgproject} />
                                     </TableCell>
                                     <TableCell>
-                                        <a href={project.repository} target="_blank" rel="noopener noreferrer">
+                                        <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
                                             Ver Repositorio
                                         </a>
                                     </TableCell>

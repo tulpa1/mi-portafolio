@@ -17,3 +17,7 @@
   background-color: rgba(220, 53, 69, 0.1); /* Usar un color rgba basado en tu var(--color-error-rgb) */
   border-radius: 8px;
 }
+
+.container_projects{
+  max-width: auto;
+}

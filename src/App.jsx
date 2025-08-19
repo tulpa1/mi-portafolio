@@ -13,6 +13,7 @@ import GridProject from './components/ProjectGrid';
 // Nuevos componentes para la administración
 import AddProject from './components/AddProject'; // Esta será la página que contiene tu ProjectForm
 import PasswordPrompt from './components/PasswordPrompt'; // El componente para la validación de correo
+import { colors } from '@mui/material';
 
 function App() {
   // Estado para controlar si el acceso al formulario de administración está concedido
@@ -24,7 +25,7 @@ function App() {
         {/* El Header (Navbar) estará siempre visible */}
         <Header /> 
 
-        <main className='main-content' > 
+        <main className='main-content' style={{ paddingTop: '80px' }}> 
           <Routes>
             {/* Ruta para la página principal del portafolio */}
             <Route 
@@ -62,8 +63,9 @@ function App() {
         </main>
         
         {/* El Footer estará siempre visible */}
-        <Footer /> 
+        
       </div>
+      <Footer /> 
     </Router>
   );
 }
